@@ -1,4 +1,4 @@
-# YOUR_PROJECT_TITLE
+# DIGITAL CLOCK
 
 ### Team members
 
