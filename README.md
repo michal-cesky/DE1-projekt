@@ -33,17 +33,17 @@ Deska Nexys A7 je kompletní platforma pro vývoj digitálních obvodů připrav
 
 V našem případě budeme pouze používat segmentové displeje, tlačítka a spínače.
 
-# Display
+### Display
 Deska Nexys A7 obsahuje dva čtyřmístné sedmisegmentové LED displeje se společnou anodou, nakonfigurované tak, aby se chovaly jako jeden osmimístný displej. V našem případě budeme využívat oba čtyřsegmentové displeje ale ten druhý pouze z půlky. Jeden sedmisegmentový displej se skládá ze sedmi segmentů, pokud budou svítit všechny segmenty dostaneme číslo 8. K tomu, aby každý displej mohl svítit samostatně je zapotřebí mít oddělené katody. Jeho schéma je vidět na obrázku.
 
-![git](images/desplej.png)
+![git](images/displej.png)
 
-# Tlačítka Spínače
+### Tlačítka a Spínače
 
 Tato deska disponuje 16 spínačia a tlačítky. Tyto spínače a tlačítka jsou k desce připojeny přes odpory aby nemohlo vzniknout poškození desky. Tlačítka jsou dizainované na změně výkonu. Při stisknutí generují mnohem větší výkon nežpři normáloném stavu. 
 Jak josuzapojeny tlačítka, spínače, LED diody, segmentové displeje a následně RGB LED diody zobrazuje toto schema.
 
-# Constraints File
+### Constraints File
 Tento soubor slouží k správnému přiřazení pinů na desce.
 
 ```shell
