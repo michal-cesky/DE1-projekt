@@ -5,7 +5,6 @@
 * Member 1 Šimon Buchta
 * Member 2 Michal Český
 * Member 3 Raul Gomez Ibanez
-* ...
 
 ### Table of contents
 
