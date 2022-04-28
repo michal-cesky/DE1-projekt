@@ -59,7 +59,7 @@ set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { a_i[0]
 ## VHDL modules description and simulations
 
 Write your text here.
-
+![git](images/simulation-digital-clock.png)
 <a name="top"></a>
 
 ## TOP module description and simulations
