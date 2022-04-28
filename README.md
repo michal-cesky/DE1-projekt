@@ -165,18 +165,12 @@ begin
     p_cnt_up_down : process(clk)
     begin
         
-        if rising_edge(clk) then
-        
+        if rising_edge(clk) then        
             if (reset = '1') then   -- Synchronous reset
                 s_cnt_local <= (others => '0'); -- Clear all bits
-
             elsif (en_i = '1') then -- Test if counter is enabled
                   s_cnt_local <= (others => '0');
-                
-                if (cnt_up_i = '1') then
-                    
-                    
-                
+                if (cnt_up_i = '1') then                             
                     if (s_cnt_local(0) = '0') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '1' ) then
                         s_cnt_local <= s_cnt_local + 1;
                         cnt_o <= '1';
@@ -192,12 +186,9 @@ begin
                 end if;
                 
             end if;
-            
-            
-            
         end if;
     end process p_cnt_up_down;
-
+    
     -- Output must be retyped from "unsigned" to "std_logic_vector"
     cnt_os <= std_logic_vector(s_cnt_local);
     
@@ -213,9 +204,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-------------------------------------------------------------
--- Entity declaration for n-bit counter
-------------------------------------------------------------
 entity cnt_up_down_1 is
     generic(
         g_CNT_WIDTH : natural := 4 -- Number of bits for counter
@@ -230,32 +218,20 @@ entity cnt_up_down_1 is
     );
 end entity cnt_up_down_1;
 
-------------------------------------------------------------
--- Architecture body for n-bit counter
-------------------------------------------------------------
 architecture behavioral of cnt_up_down_1 is
 
-    -- Local counter
     signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
 
 begin
-    --------------------------------------------------------
-    -- p_cnt_up_down:
-    -- Clocked process with synchronous reset which implements
-    -- n-bit up/down counter.
-    --------------------------------------------------------
+
     p_cnt_up_down : process(clk)
     begin
-        if rising_edge(clk) then
-        
+        if rising_edge(clk) then        
             if (reset = '1') then   -- Synchronous reset
                 s_cnt_local <= (others => '0'); -- Clear all bits
-
             elsif (en_i = '1') then -- Test if counter is enabled
-                  s_cnt_local <= (others => '0');
-                
-                if (cnt_i = '1') then
-                
+                  s_cnt_local <= (others => '0');               
+                if (cnt_i = '1') then               
                     if (s_cnt_local(0) = '0') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '1' ) and (s_cnt_local(3) = '0' ) then
                         s_cnt_local <= s_cnt_local + 1;
                         cnt_o <= '1';
@@ -265,16 +241,11 @@ begin
                     else
                         s_cnt_local <= s_cnt_local + 1;
                         cnt_o <= '0';  
-                    end if;   
-                
+                    end if;                   
              else             
-                    s_cnt_local <= s_cnt_local ;
-                
-                
+                    s_cnt_local <= s_cnt_local ;                               
                  end if;
-            end if;
-            
-            
+            end if;                      
         end if;
     end process p_cnt_up_down;
 
@@ -282,6 +253,258 @@ begin
     cnt_oss <= std_logic_vector(s_cnt_local);
 
 end architecture behavioral;
+```
+
+#### cnt_up_down 2
+Modul slouží k jednotlivému počítání jednotek minut. Podmínka značí že pokud čítač cnt_up_down 1 dosáhne hodnoty 6 a zároveň čítač cnt_up_down hodnty 9 tak začne počítat. Tato podmínka platí do té doby než čítač cnt_up_down dosáhne hodnoty 9. Poté se vyresetuje.
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cnt_up_down_2 is
+    generic(
+        g_CNT_WIDTH : natural := 4 -- Number of bits for counter
+    );
+    port(
+        clk      : in  std_logic;  -- Main clock
+        reset    : in  std_logic;  -- Synchronous reset
+        en_i     : in  std_logic;  -- Enable input
+        cnt_i    : in  std_logic;  -- Direction of the counter
+        cnt_i2   : in  std_logic;
+        cnt_om   : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+        cnt_o    : out std_logic
+    );
+end entity cnt_up_down_2;
+
+architecture behavioral of cnt_up_down_2 is
+
+    -- Local counter
+    signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
+
+begin
+   p_cnt_up_down : process(clk)
+    begin
+        if rising_edge(clk) then        
+            if (reset = '1') then   -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
+            elsif (en_i = '1') then -- Test if counter is enabled
+                  s_cnt_local <= (others => '0');        
+                if ((cnt_i and cnt_i2) = '1') then               
+                    if (s_cnt_local(0) = '0') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '1' ) then
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '1';
+                    elsif (s_cnt_local(0) = '1') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '1' ) then
+                        s_cnt_local <= (others => '0'); -- Clear all bits
+                        cnt_o <= '0';
+                    else
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '0';  
+                    end if;                   
+             else             
+                    s_cnt_local <= s_cnt_local ;                               
+                 end if;
+            end if;                    
+        end if;
+    end process p_cnt_up_down;
+    
+    -- Output must be retyped from "unsigned" to "std_logic_vector"
+    cnt_om <= std_logic_vector(s_cnt_local);
+
+end architecture behavioral;
+```
+#### cnt_up_down 3
+Modul slouží k jednotlivému počítání desítek minut. Podmínka značí že pokud čítač cnt_up_down 2 dosáhne hodnoty 9 a zároveň  cnt_up_down 1 dosáhne hodnoty 6 a zároveň čítač cnt_up_down hodnoty 9 tak začne počítat. Tato podmínka platí do té doby než čítač cnt_up_down dosáhne hodnoty 9. Poté se vyresetuje.
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cnt_up_down_3 is
+    generic(
+        g_CNT_WIDTH : natural := 4 -- Number of bits for counter
+    );
+    port(
+        clk      : in  std_logic;  -- Main clock
+        reset    : in  std_logic;  -- Synchronous reset
+        en_i     : in  std_logic;  -- Enable input
+        cnt_i    : in  std_logic;  -- Direction of the counter
+        cnt_i2   : in  std_logic;
+        cnt_i3   : in  std_logic;
+        cnt_omm   : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+        cnt_o    : out std_logic
+    );
+end entity cnt_up_down_3;
+
+architecture behavioral of cnt_up_down_3 is
+
+    -- Local counter
+    signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
+
+begin
+   p_cnt_up_down : process(clk)
+    begin
+        if rising_edge(clk) then
+        
+            if (reset = '1') then   -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
+            elsif (en_i = '1') then -- Test if counter is enabled
+                  s_cnt_local <= (others => '0');               
+                if ((cnt_i and cnt_i2 and cnt_i3) = '1') then                
+                    if (s_cnt_local(0) = '0') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '1' ) and (s_cnt_local(3) = '0' ) then
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '1';
+                    elsif (s_cnt_local(0) = '1') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '1' ) and (s_cnt_local(3) = '0' ) then
+                        s_cnt_local <= (others => '0'); -- Clear all bits
+                        cnt_o <= '0';
+                    else
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '0';  
+                    end if;                 
+             else             
+                    s_cnt_local <= s_cnt_local ;                              
+                 end if;
+            end if;                       
+        end if;
+    end process p_cnt_up_down;
+
+    -- Output must be retyped from "unsigned" to "std_logic_vector"
+    cnt_omm <= std_logic_vector(s_cnt_local);
+
+end architecture behavioral;
+```
+#### cnt_up_down 4
+Modul slouží k jednotlivému počítání jednotek hodin. Podmínka značí že pokud čítač cnt_up_down 3 dosáhne hodnoty 6 a zároveň cnt_up_down 2 dosáhne hodnoty 9 a zároveň cnt_up_down 1 dosáhne hodnoty 6 a zároveň čítač cnt_up_down hodnoty 9 tak začne počítat. Tato podmínka platí do té doby než čítač cnt_up_down dosáhne hodnoty 9. Poté se vyresetuje.
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cnt_up_down_4 is
+    generic(
+        g_CNT_WIDTH : natural := 4 -- Number of bits for counter
+    );
+    port(
+        clk      : in  std_logic;  -- Main clock
+        reset    : in  std_logic;  -- Synchronous reset
+        en_i     : in  std_logic;  -- Enable input
+        cnt_i    : in  std_logic;  -- Direction of the counter
+        cnt_i2   : in  std_logic;
+        cnt_i3   : in  std_logic;
+        cnt_i4   : in  std_logic;
+        cnt_i6   : in  std_logic;
+        cnt_oh   : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+        cnt_o    : out std_logic
+    );
+end entity cnt_up_down_4;
+
+architecture behavioral of cnt_up_down_4 is
+
+    -- Local counter
+    signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
+
+begin
+   p_cnt_up_down : process(clk)
+    begin
+        if rising_edge(clk) then       
+            if (reset = '1') then   -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
+            elsif (en_i = '1') then -- Test if counter is enabled
+                  s_cnt_local <= (others => '0');               
+                if ((cnt_i and cnt_i2 and cnt_i3 and cnt_i4) = '1') then             
+                    if (s_cnt_local(0) = '0') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '1' )  then
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '1';
+                    elsif (s_cnt_local(0) = '1') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '1' )  then
+                        s_cnt_local <= (others => '0'); -- Clear all bits
+                        cnt_o <= '0';
+                    elsif (s_cnt_local(0) = '0') and (s_cnt_local(1) = '1' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '0' ) and (cnt_i6 = '1') then
+                        s_cnt_local <= s_cnt_local +1;
+                        cnt_o <= '1';                   
+                    elsif (s_cnt_local(0) = '1') and (s_cnt_local(1) = '1' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '0' ) and (cnt_i6 = '1') then
+                        s_cnt_local <= (others => '0'); -- Clear all binary_read
+                        cnt_o <= '0'; 
+                    else
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '0';  
+                    end if;                 
+             else             
+                    s_cnt_local <= s_cnt_local ;                         
+                 end if;
+            end if;                 
+        end if;
+    end process p_cnt_up_down;
+
+    -- Output must be retyped from "unsigned" to "std_logic_vector"
+    cnt_oh <= std_logic_vector(s_cnt_local);
+
+end architecture behavioral;
+```
+#### cnt_up_down 5
+Modul slouží k jednotlivému počítání desítek hodin. Podmínka značí že pokud čítač cnt_up_down 4 dosáhne hodnoty 9 a zároveň cnt_up_down 3 dosáhne hodnoty 6 a zároveň cnt_up_down 2 dosáhne hodnoty 9 a zároveň cnt_up_down 1 dosáhne hodnoty 6 a zároveň čítač cnt_up_down hodnoty 9 tak začne počítat. Tato podmínka platí do té doby než čítač cnt_up_down dosáhne hodnoty 9. Poté se vyresetuje.
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cnt_up_down_5 is
+    generic(
+        g_CNT_WIDTH : natural := 4 -- Number of bits for counter
+    );
+    port(
+        clk      : in  std_logic;  -- Main clock
+        reset    : in  std_logic;  -- Synchronous reset
+        en_i     : in  std_logic;  -- Enable input
+        cnt_i    : in  std_logic;  -- Direction of the counter
+        cnt_i2   : in  std_logic;
+        cnt_i3   : in  std_logic;
+        cnt_i4   : in  std_logic;
+        cnt_i5   : in  std_logic;
+        cnt_ohh  : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+        cnt_o    : out std_logic;
+        cnt_d    : out std_logic
+    );
+end entity cnt_up_down_5;
+
+architecture behavioral of cnt_up_down_5 is
+
+    -- Local counter
+    signal s_cnt_local : unsigned(g_CNT_WIDTH - 1 downto 0);
+    signal cnt_6o : std_logic;
+begin
+   p_cnt_up_down : process(clk)
+    begin
+        if rising_edge(clk) then       
+            if (reset = '1') then   -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
+            elsif (en_i = '1') then -- Test if counter is enabled
+                  s_cnt_local <= (others => '0');            
+                if ((cnt_i and cnt_i2 and cnt_i3 and cnt_i4 and cnt_i5) = '1') then              
+                    if (s_cnt_local(0) = '1') and (s_cnt_local(1) = '0' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '0' ) then
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '1';
+                        cnt_6o <= '1';
+                    elsif (s_cnt_local(0) = '0') and (s_cnt_local(1) = '1' ) and (s_cnt_local(2) = '0' ) and (s_cnt_local(3) = '0' ) then
+                        s_cnt_local <= (others => '0'); -- Clear all bits
+                        cnt_o <= '0';
+                        cnt_6o <= '0';
+                    else
+                        s_cnt_local <= s_cnt_local + 1;
+                        cnt_o <= '0';
+                        cnt_6o <= '0';  
+                    end if;               
+             else             
+                    s_cnt_local <= s_cnt_local ;                
+                 end if;
+            end if;                       
+        end if;
+    end process p_cnt_up_down;
+
+    -- Output must be retyped from "unsigned" to "std_logic_vector"
+    cnt_ohh <= std_logic_vector(s_cnt_local);
+    cnt_d <= std_logic(cnt_6o);
+end architecture behavioral;
+```
 ![git](images/simulation-digital-clock.png)
 <a name="top"></a>
 
