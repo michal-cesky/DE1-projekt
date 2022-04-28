@@ -1,0 +1,1249 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Apr 27 13:03:52 2022
+# Process ID: 4624
+# Current directory: C:/Users/newDefaultTest/Desktop/Digital_clock1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3368 C:\Users\newDefaultTest\Desktop\Digital_clock1\Digital_clock1.xpr
+# Log file: C:/Users/newDefaultTest/Desktop/Digital_clock1/vivado.log
+# Journal file: C:/Users/newDefaultTest/Desktop/Digital_clock1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Documents/xcesky00/digital-electronics-1/labs/Digital Clock/Digital_clock1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/APPZ/Xilinx/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_2'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim/xsim.dir/tb_cnt_up_down_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim/xsim.dir/tb_cnt_up_down_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Apr 27 13:05:55 2022. For additional details about this file, please refer to the WebTalk help file at C:/APPZ/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 113.660 ; gain = 17.609
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 27 13:05:55 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1020.273 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cnt_up_down_behav -key {Behavioral:sim_1:Functional:tb_cnt_up_down} -tclbatch {tb_cnt_up_down.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_cnt_up_down.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cnt_up_down_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_2'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_3'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cnt_up_down_behav -key {Behavioral:sim_1:Functional:tb_cnt_up_down} -tclbatch {tb_cnt_up_down.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_cnt_up_down.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cnt_up_down_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close [ open C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_4.vhd w ]
+add_files C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_4.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_4.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_4'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_4 [\cnt_up_down_4(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cnt_up_down_behav -key {Behavioral:sim_1:Functional:tb_cnt_up_down} -tclbatch {tb_cnt_up_down.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_cnt_up_down.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cnt_up_down_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_4 [\cnt_up_down_4(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_4 [\cnt_up_down_4(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_3'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_4 [\cnt_up_down_4(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close [ open C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_5.vhd w ]
+add_files C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_5.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_5.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cnt_up_down_5'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cnt_up_down'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down [\cnt_up_down(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_1 [\cnt_up_down_1(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_2 [\cnt_up_down_2(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_3 [\cnt_up_down_3(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_4 [\cnt_up_down_4(g_cnt_width=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.cnt_up_down_5 [\cnt_up_down_5(g_cnt_width=5)\]
+Compiling architecture testbench of entity xil_defaultlib.tb_cnt_up_down
+Built simulation snapshot tb_cnt_up_down_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cnt_up_down_behav -key {Behavioral:sim_1:Functional:tb_cnt_up_down} -tclbatch {tb_cnt_up_down.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_cnt_up_down.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cnt_up_down_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+add_files -norecurse {D:/Documents/xbucht30/Digital_clock1/Digital_clock1.srcs/sources_1/new/driver_7seg_4digits.vhd D:/Documents/xbucht30/Digital_clock1/Digital_clock1.srcs/sources_1/new/top.vhd}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/hex_7_seg.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/hex_7_seg.vhd
+add_files -norecurse D:/Documents/xbucht30/Digital_clock1/Digital_clock1.srcs/sources_1/new/hex_7_seg.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_0.vhd w ]
+add_files C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/cnt_up_down_0.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/clock_enable_1.vhd w ]
+add_files C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sources_1/new/clock_enable_1.vhd
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_cnt_up_down' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_cnt_up_down_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+"xelab -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/APPZ/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 8ed5432c0cd946f2ab0cb226433d1edc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_cnt_up_down_behav xil_defaultlib.tb_cnt_up_down -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_cnt_up_down_behav -key {Behavioral:sim_1:Functional:tb_cnt_up_down} -tclbatch {tb_cnt_up_down.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_cnt_up_down.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_cnt_up_down/p_stimulus  File: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_cnt_up_down_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.273 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+file mkdir C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/constrs_1
+file mkdir C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/constrs_1/new
+close [ open C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/constrs_1/new/nexys-a7-50t.xdc w ]
+add_files -fileset constrs_1 C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.srcs/constrs_1/new/nexys-a7-50t.xdc
+set_property top top [current_fileset]
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 14:57:52 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 14:57:52 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:09:15 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:09:15 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:10:18 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:10:18 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:11:10 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:11:10 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:12:50 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:12:50 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:13:53 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:13:53 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:18:16 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:18:16 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:20:13 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:20:13 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:23:09 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:23:09 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-03:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 2255.098 ; gain = 9.793
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292AD2E25A
+current_hw_device [get_hw_devices xc7a50t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:36:53 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:36:53 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3671.078 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+open_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3671.078 ; gain = 0.000
+INFO: [Common 17-344] 'open_run' was cancelled
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:39:19 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:39:19 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:42:50 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:42:50 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:43:22 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:43:22 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:46:28 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:46:29 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-03:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 3671.078 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292AD2E25A
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+current_hw_device [get_hw_devices xc7a50t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 15:53:40 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 15:53:40 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:00:21 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:00:21 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-03:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3671.078 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292AD2E25A
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+current_hw_device [get_hw_devices xc7a50t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:08:59 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:08:59 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:10:37 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:10:37 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 14 2020-03:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 3671.078 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292AD2E25A
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+current_hw_device [get_hw_devices xc7a50t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:21:33 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:21:34 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:22:32 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:22:32 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:37:47 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:37:47 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:38:37 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:38:37 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:42:20 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:42:20 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:44:37 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:44:37 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:46:36 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:46:36 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:47:13 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:47:13 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:51:42 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:51:43 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:54:23 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:54:23 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:55:20 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:55:20 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Apr 27 16:56:20 2022] Launched synth_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/synth_1/runme.log
+[Wed Apr 27 16:56:20 2022] Launched impl_1...
+Run output will be captured here: C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/newDefaultTest/Desktop/Digital_clock1/Digital_clock1.runs/impl_1/top.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a50t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 27 16:58:41 2022...

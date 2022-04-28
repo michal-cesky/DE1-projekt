@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down.vhd" \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down_1.vhd" \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down_2.vhd" \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down_3.vhd" \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down_4.vhd" \
+"../../../../Digital_clock1.srcs/sources_1/new/cnt_up_down_5.vhd" \
+"../../../../Digital_clock1.srcs/sim_1/new/tb_cnt_up_down.vhd" \
+
+# Do not sort compile order
+nosort
