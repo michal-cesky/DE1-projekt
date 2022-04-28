@@ -137,7 +137,7 @@ end architecture Behavioral;
 ```
 
 #### cnt_up_down 0
-Modul slouží k jednotlivému počítání setin vteřin. Podmínka značí že pokud čítač dosáhne hodnoty 9 vyresetuje se a začne počítat zase od 0.
+Modul slouží k jednotlivému počítání vteřin. Podmínka značí že pokud čítač dosáhne hodnoty 9 vyresetuje se a začne počítat zase od 0 a zároveň vyšle signál navazujícímu čítači aby přičetl 1 (totéž platí pro všechny ostatní čítače).
 ```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
@@ -692,6 +692,7 @@ end Behavioral;
 
 #### Top
 Modul slouží ke propojení jednotlivých modulů k sobě.
+V topu také můžeme vidět kousek propojení cnt_m, toto bylo zamýšleno jako manuální nastavování času, jenž jsme, ale nedokázali dovést do konce. Měl to být čítač, který by čítal do maximální hodnoty daného digitu (pro minuty: 9, desítky minut: 5, hodiny: 9 (případně 3 pokud desítky hodin jsou v hodnotě 2),desítky hodin: 2), tenhle konkrétně měl na starost jednotky minut. Spouštěcí impulz čítači měl dodávat SW(1). Pokud SW(1) bylo přesunuto zpět na hodnotu logická '0', čítač se zastavil a na displeji měla svítit hodnota čísla, na kterou se dostal během sepnuté polohy (SW(1) v poloze logické '1'). Totéž mělo být realizováno pro desítky minut, hodiny i desítky hodin. Nastavení sekund jsme nezamýšleli, ovšem bylo by to také možné. Každý čítač pro daný digit by měl mít svůj switch SW. 
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
