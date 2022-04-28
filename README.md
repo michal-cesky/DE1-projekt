@@ -505,7 +505,7 @@ begin
     cnt_d <= std_logic(cnt_6o);
 end architecture behavioral;
 ```
-#### cnt_up_down 5
+#### driver_7seg_4digits
 Modul slouží ke zvolení správnému displeje a nastavené dané hodnoty.
 ```vhdl
 library ieee;
@@ -618,14 +618,272 @@ begin
 end architecture Behavioral;
 ```
 
+#### hex_7_seg
+Modul slouží ke zvolení číslic a znaků na segmentový display. Zadávní je pomocí binárního kódu.
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity hex_7seg is
+    Port ( hex_i : in STD_LOGIC_VECTOR (3 downto 0);
+           seg_o : out STD_LOGIC_VECTOR (6 downto 0));
+end hex_7seg;
+
+architecture Behavioral of hex_7seg is
+begin
+p_7seg_decoder : process(hex_i)
+    begin
+        case hex_i is
+            when "0000" =>
+                seg_o <= "0000001"; -- 0
+            when "0001" =>
+                seg_o <= "1001111"; -- 1
+
+            when "0010" =>
+                seg_o <= "0010010"; -- 2
+            when "0011" =>
+                seg_o <= "0000110"; -- 3
+            
+            when "0100" =>
+                seg_o <= "1001100"; -- 4
+
+            when "0101" =>
+                seg_o <= "0100100"; -- 5
+
+            when "0110" =>
+                seg_o <= "0100000"; -- 6
+
+            when "0111" =>
+                seg_o <= "0001111"; -- 7
+
+            when "1000" =>
+                seg_o <= "0000000"; -- 8
+
+            -- WRITE YOUR CODE HERE
+            when "1001" =>
+                seg_o <= "0000100"; -- 9
+
+            when "1010" =>
+                seg_o <= "0000000"; -- A
+
+            when "1011" =>
+                seg_o <= "1100000"; -- B
+
+            when "1100" =>
+                seg_o <= "0110001"; -- C
+
+            when "1101" =>
+                seg_o <= "1000010"; -- D
+
+            when "1110" =>
+                seg_o <= "0110000"; -- E
+            when others =>
+                seg_o <= "0111000"; -- F
+        end case;
+    end process p_7seg_decoder;
+
+end Behavioral;
+```
 
 ![git](images/simulation-digital-clock.png)
 <a name="top"></a>
 
 ## TOP module description and simulations
 
-Write your text here.
+#### Top
+Modul slouží ke propojení jednotlivých modulů k sobě.
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
+entity top is
+    Port ( CLK100MHZ : in STD_LOGIC;
+           SW : in STD_LOGIC_VECTOR(15 DOWNTO 0 );
+           CA : out STD_LOGIC;
+           CB : out STD_LOGIC;
+           CC : out STD_LOGIC;
+           CD : out STD_LOGIC;
+           CE : out STD_LOGIC;
+           CF : out STD_LOGIC;
+           CG : out STD_LOGIC;
+           DP : out STD_LOGIC;
+           AN : out STD_LOGIC_VECTOR (7 downto 0);
+           BTNC : in STD_LOGIC;
+           BTNU : in STD_LOGIC);
+end top;
+
+architecture Behavioral of top is
+
+signal s_cnt_os :std_logic_vector(4-1 downto 0);
+signal s_cnt_oss :std_logic_vector(4-1 downto 0);
+signal s_cnt_om :std_logic_vector(4-1 downto 0);
+signal s_cnt_omm :std_logic_vector(4-1 downto 0);
+signal s_cnt_oh :std_logic_vector(4-1 downto 0);
+signal s_cnt_ohh :std_logic_vector(4-1 downto 0);
+signal s_cnt_1 : std_logic;
+signal s_cnt_2 : std_logic;
+signal s_cnt_3 : std_logic;
+signal s_cnt_4 : std_logic;
+signal s_cnt_5 : std_logic;
+signal s_cnt_6 : std_logic;
+signal s_en : std_logic;
+signal s_cnt_am : std_logic_vector(4- 1 downto 0);
+signal s_cnt_d : std_logic;
+
+begin
+
+     clk_en0 : entity work.clock_enable_1
+      generic map(
+          g_MAX => 100000000
+      )
+      port map(
+          clk   => CLK100MHZ,
+          reset => BTNC,
+          ce_o  => s_en
+      );
+      
+     uut_cnt : entity work.cnt_up_down
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_up_i => SW(0),
+            cnt_os   => s_cnt_os,
+            cnt_o   => s_cnt_1
+        );
+
+    --second cnt_up_down (10 seconds)
+    uut_cnt1 : entity work.cnt_up_down_1
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_i    => s_cnt_1,
+            cnt_oss  => s_cnt_oss,
+            cnt_o    => s_cnt_2
+        );
+    
+    --third cnt_up_down (minutes)
+    uut_cnt2 : entity work.cnt_up_down_2
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_i    => s_cnt_1,
+            cnt_i2   => s_cnt_2,
+            cnt_om   => s_cnt_om,
+            cnt_o    => s_cnt_3
+        );    
+    
+    --fourth cnt_up_down 10 minutes
+    uut_cnt3 : entity work.cnt_up_down_3
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_i    => s_cnt_1,
+            cnt_i2   => s_cnt_2,
+            cnt_i3   => s_cnt_3,
+            cnt_omm   => s_cnt_omm,
+            cnt_o    => s_cnt_4
+        );      
+        
+     --fifth cnt_up_down hours
+    uut_cnt4 : entity work.cnt_up_down_4
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_i    => s_cnt_1,
+            cnt_i2   => s_cnt_2,
+            cnt_i3   => s_cnt_3,
+            cnt_i4   => s_cnt_4,
+            cnt_oh   => s_cnt_oh,
+            cnt_o    => s_cnt_5,
+            cnt_i6   => s_cnt_d
+        );          
+    
+    --sixth cnt_up_down 10 hours
+    uut_cnt5 : entity work.cnt_up_down_5
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            cnt_i    => s_cnt_1,
+            cnt_i2   => s_cnt_2,
+            cnt_i3   => s_cnt_3,
+            cnt_i4   => s_cnt_4,
+            cnt_i5   => s_cnt_5,
+            cnt_ohh  => s_cnt_ohh,
+            cnt_o    => s_cnt_6,
+            cnt_d   => s_cnt_d
+        );        
+        
+    --minutes adder        
+    uut_cntm : entity work.cnt_m
+        generic map(
+            g_CNT_WIDTH  => 4
+        )
+        port map(
+            clk      => CLK100MHZ,
+            reset    => BTNC,
+            en_i     => s_en,
+            data2_i  => s_cnt_om,
+            cnt_up_i => SW(1),
+            cnt_o   => s_cnt_am
+        );
+
+  driver_seg_4 : entity work.driver_7seg_4digits
+      port map(
+          clk        => CLK100MHZ,
+          reset      => BTNC,
+          data0_i => s_cnt_os,
+          
+          data1_i => s_cnt_oss,
+        
+          data2_i => s_cnt_om,--s_cnt_om,          
+         
+          data3_i => s_cnt_omm,
+          
+          data4_i => s_cnt_oh,
+         
+          data5_i => s_cnt_ohh,
+          
+          dp_i => "0111",
+          
+          seg_o(6) => CA,
+          seg_o(5) => CB,
+          seg_o(4) => CC,
+          seg_o(3) => CD,
+          seg_o(2) => CE,
+          seg_o(1) => CF,
+          seg_o(0) => CG,
+          
+          dp_o => DP,
+          dig_o(5 downto 0) => AN(5 downto 0)
+      );
+  
+AN(7 downto 6) <= b"11";
+end architecture Behavioral;
+```
 <a name="video"></a>
 
 ## Video
