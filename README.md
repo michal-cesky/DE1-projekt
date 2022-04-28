@@ -505,6 +505,120 @@ begin
     cnt_d <= std_logic(cnt_6o);
 end architecture behavioral;
 ```
+#### cnt_up_down 5
+Modul slouží ke zvolení správnému displeje a nastavené dané hodnoty.
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity driver_7seg_4digits is
+    port(
+        clk     : in  std_logic;
+        reset   : in  std_logic;
+        -- 4-bit input values for individual digits
+        data0_i : in  std_logic_vector(4 - 1 downto 0);
+        data1_i : in  std_logic_vector(4 - 1 downto 0);
+        data2_i : in  std_logic_vector(4 - 1 downto 0);
+        data3_i : in  std_logic_vector(4 - 1 downto 0);
+        data4_i : in  std_logic_vector(4 - 1 downto 0);
+        data5_i : in  std_logic_vector(4 - 1 downto 0);
+        -- 4-bit input value for decimal points
+        dp_i    : in  std_logic_vector(4 - 1 downto 0);
+        -- Decimal point for specific digit
+        dp_o    : out std_logic;
+        -- Cathode values for individual segments
+        seg_o   : out std_logic_vector(7 - 1 downto 0);
+        -- Common anode signals to individual displays
+        dig_o   : out std_logic_vector(6 - 1 downto 0)
+    );
+end entity driver_7seg_4digits;
+
+architecture Behavioral of driver_7seg_4digits is
+
+    -- Internal clock enable
+    signal s_en  : std_logic;
+    -- Internal 2-bit counter for multiplexing 4 digits
+    signal s_cnt : std_logic_vector(3 - 1 downto 0);
+    -- Internal 4-bit value for 7-segment decoder
+    signal s_hex : std_logic_vector(4 - 1 downto 0);
+
+begin
+    clk_en0 : entity work.clock_enable
+        generic map(
+            g_MAX => 4000
+        )
+        port map(
+            clk => clk , 
+            reset => reset,
+            ce_o  => s_en
+        );
+
+    bin_cnt0 : entity work.cnt_up_down_0
+        generic map(
+            g_CNT_Width => 3
+        )
+        port map(
+            en_i => s_en,
+            cnt_up_i =>'0',
+            reset => reset,
+            clk => clk,
+            cnt_o =>s_cnt
+        );
+
+    hex2seg : entity work.hex_7seg
+        port map(
+            hex_i => s_hex,
+            seg_o => seg_o
+        );
+        
+    p_mux : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then
+                s_hex <= data0_i;
+                dp_o  <= dp_i(0);
+                dig_o <= "111110";
+            else
+                case s_cnt is
+                    when "110" =>
+                        s_hex <= data5_i;
+                        dp_o  <= dp_i(3);
+                        dig_o <= "011111";
+
+                    when "101" =>
+                        s_hex <= data4_i;
+                        dp_o  <= dp_i(2);
+                        dig_o <= "101111";
+
+                    when "100" =>
+                        s_hex <= data3_i;
+                        dp_o  <= dp_i(1);
+                        dig_o <= "110111";
+                    
+                    when "011" =>
+                        s_hex <= data2_i;
+                        dp_o  <= dp_i(1);
+                        dig_o <= "111011"; 
+                        
+                    when "010" =>
+                        s_hex <= data1_i;
+                        dp_o  <= dp_i(1);
+                        dig_o <= "111101";       
+
+                    when others =>
+                        s_hex <= data0_i;
+                        dp_o  <= dp_i(0);
+                        dig_o <= "111110";
+                end case;
+            end if;
+        end if;
+    end process p_mux;
+
+end architecture Behavioral;
+```
+
+
 ![git](images/simulation-digital-clock.png)
 <a name="top"></a>
 
