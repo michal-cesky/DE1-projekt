@@ -885,6 +885,8 @@ begin
 AN(7 downto 6) <= b"11";
 end architecture Behavioral;
 ```
+![git](images/schema-digital-clock.png)
+
 <a name="video"></a>
 
 ## Video
